@@ -1,0 +1,18 @@
+{# templates/product/products_by_benefits.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Products by Benefits</h1>
+
+    <div class="product-list">
+        {% for product in products %}
+            <div class="product">
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price }}</p>
+                <img src="{{ product.image_url }}" alt="Product Image">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

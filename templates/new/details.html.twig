@@ -1,0 +1,103 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <meta charset="UTF-8">
+        <title>Product details</title>
+
+    <link href = "{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet"/>
+    <link href="{{ asset('css/style1.css') }}" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    </head>
+
+    <body>
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
+  <div class="container-nav">
+    <a class="navbar-brand" href="#">
+            <i class="fa-brands fa-nfc-symbol"></i>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+        </nav>
+</header>
+
+
+
+<br>
+
+    <h1 style= "margin-top: 50px";>Your Cart</h1>
+<br>
+
+     {% if productCarts|length > 0 %}
+       <table class="table">
+         <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th></th>
+                
+            </tr>
+         </thead>
+         <tbody>
+             {% for productCart in productCarts %}
+                 <tr>
+                      <td>{{productCart.product.name}}</td>
+                      <td>{{productCart.product.price}}</td>
+                      <td>{{productCart.quantity}}</td>
+                      <td>{{productCart.product.price * productCart.quantity}}</td>
+                      <td>
+                          <a href="{{path('cart_remove', {'id': productCart.id}) }}" class= "trash">
+                              <i class = "fas fa-trash" style = "color:white;"></i>
+                          </a>
+                      </td>
+
+                 </tr>
+             {% endfor %}
+         </tbody> 
+          <tfoot>
+                 <tr>
+                       <td colspan="3">Total :</td>
+                       <td>{{cart.totalPrice()}}</td>
+                       <td></td>
+                 </tr>
+          </tfoot>
+        </table>
+
+ <br>
+    <div>
+            <form action="{{path('payment')}}" method="POST">
+            <input type = "hidden" id="paymentId" name ="amount" value="{{cart.totalPrice()}}" >
+
+                <div class="payment">
+                    <button id="confirmpayment" type="submit" >Pay</button>
+                </div>
+            </form>
+    </div>
+     {% else %}
+         <p style= "text-align:center";><em>The Cart is empty!</em></p>
+     {% endif %}
+    
+
+    <script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+</body>
+    </html>

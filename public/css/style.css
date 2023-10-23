@@ -1,0 +1,218 @@
+
+body {
+  background-image:url('/upload/macadamia-body-lotion-skin-cream.jpg');
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: right;
+  color: #098af3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  color: bleu;
+}
+
+
+.form-container {
+  max-width: 50%;
+  width: 100%;
+  position: relative;
+}
+
+form input, form select {
+  height: 45px;
+  width: 100%;
+  
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+}
+
+
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+#img-carousel {
+  display: flex;
+  align-items: center;
+  width: 100%; 
+  margin: 20px; 
+}
+
+
+.input {
+	appearance: none;
+	border-radius: 0;
+	font-size: larger;
+	color: black;
+}
+
+.card {
+	margin: 2rem auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
+}
+
+.card-heading{
+  padding-left: 12%;
+  color: aliceblue;
+  text-shadow: black 2px 2px;
+}
+
+.card-form {
+	padding: 2rem 1rem 0;
+  position:center;
+}
+
+
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+  padding: 10px;
+	padding-top: 1.5rem;
+	&+.input {
+		margin-top: 1.5rem;
+	}
+}
+
+.input-label {
+	color: #8597a3;
+	position: absolute;
+	top: 1.5rem;
+	transition: .25s ease;
+  outline: none;
+
+}
+
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}
+
+.action {
+	margin-top: 2rem;
+	background: linear-gradient(
+        45deg,
+        hsla(168, 85%, 52%, 0.5),
+        hsla(263, 88%, 45%, 0.5) 100%
+      );
+}
+
+.action-button {
+	font: inherit;
+	font-size: 17px;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background: linear-gradient(
+        45deg,
+        hsla(168, 85%, 52%, 0.5),
+        hsla(263, 88%, 45%, 0.5) 100%
+      );	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.card-info {
+	padding: 1rem 1rem;
+	text-align: center;
+	font-size: .875rem;
+	color: #8597a3;
+	a{
+		display: block;
+		color: #6658d3;
+		text-decoration: none;
+	}
+}
+
+.container{
+  padding-right: 50%;
+  justify-content: center;
+  ;
+}
+
+#skinproblem{
+  border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 17px;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+
+}
+
+#skintype{
+    border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 17px;
+	&:focus, &:valid {
+		outline: 0;
+		border-bottom-color: #6658d3;
+		&+.input-label {
+			color: #6658d3;
+			transform: translateY(-1.5rem);
+		}
+	}
+}
+
+.skincare{
+	font-size: 23px;
+	padding-left: 85%;
+	padding-top: 10%;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	
+}
+
